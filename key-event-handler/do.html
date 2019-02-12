@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Key Event Handler</title>
+    <script src="https://unpkg.com/keycode-js@1.0.3/dist/keycode.min.js"></script>
+    <script type="text/javascript">
+
+
+        /*
+            KeyCode comes with keycode.min.js. see https://github.com/kabirbaidhya/keycode-js#all-constants
+            use constant or raw key code value
+            Key  KeyCode.Constant    KeyCode
+            Up	KEY_UP	38
+            Down	KEY_DOWN	40  
+        */
+
+        var keydispatcher = {
+            [KeyCode.KEY_UP /* 38 */]: function (e) {
+                console.log('up');
+            },
+            [KeyCode.KEY_DOWN /* 40 */]: function (e) {
+                console.log('down');
+            }
+        }
+
+        /*
+            keydispatcher is a map like structure -> to find the relevant listener callback its code is used as key.
+            the time to find the listener tends to Θ(1) -> it is constant. Each Key Event needs the same  time to find its listener.
+        */
+
+
+        window.onkeydown = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            var listener = keydispatcher[code];
+            if (listener) {
+                listener(e);
+            }
+        };
+    </script>
+</head>
+
+<body></body>
+
+</html>

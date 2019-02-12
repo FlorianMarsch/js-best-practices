@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Key Event Handler</title>
+    <script type="text/javascript">
+
+
+        /*
+               this implementation is a stack like structure -> to find the relevant listener callback each if-statement is checked. One by onather
+               the time to find the listener tends to Θ(n) -> it does not scale. The more Key Events to handle the more time is used.
+           */
+
+        window.onkeydown = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            if (code === 38) {
+                console.log('up')
+            }
+            if (code === 40) {
+                console.log('down')
+            }
+            /*
+                put default handling here
+            */
+        };
+    </script>
+</head>
+
+<body></body>
+
+</html>

@@ -1,0 +1,537 @@
+<html>
+
+<head>
+    <title>Key Event Handler</title>
+    <script src="https://unpkg.com/keycode-js@1.0.3/dist/keycode.min.js"></script>
+    <script type="text/javascript">
+
+
+
+        var keydispatcher = {
+            [KeyCode.KEY_CANCEL	/*	3	*/]: function (e) { console.log('	Cancel	 ') },
+            [KeyCode.KEY_HELP	/*	6	*/]: function (e) { console.log('	Help	 ') },
+            [KeyCode.KEY_BACK_SPACE	/*	8	*/]: function (e) { console.log('	Backspace	 ') },
+            [KeyCode.KEY_TAB	/*	9	*/]: function (e) { console.log('	Tab	 ') },
+            [KeyCode.KEY_CLEAR	/*	12	*/]: function (e) { console.log('	Clear	 ') },
+            [KeyCode.KEY_RETURN	/*	13	*/]: function (e) { console.log('	Return	 ') },
+            [KeyCode.KEY_ENTER	/*	14	*/]: function (e) { console.log('	Enter	 ') },
+            [KeyCode.KEY_SHIFT	/*	16	*/]: function (e) { console.log('	Shift	 ') },
+            [KeyCode.KEY_CONTROL	/*	17	*/]: function (e) { console.log('	Control	 ') },
+            [KeyCode.KEY_ALT	/*	18	*/]: function (e) { console.log('	Alt	 ') },
+            [KeyCode.KEY_PAUSE	/*	19	*/]: function (e) { console.log('	Pause	 ') },
+            [KeyCode.KEY_CAPS_LOCK	/*	20	*/]: function (e) { console.log('	Caps Lock	 ') },
+            [KeyCode.KEY_ESCAPE	/*	27	*/]: function (e) { console.log('	Escape	 ') },
+            [KeyCode.KEY_SPACE	/*	32	*/]: function (e) { console.log('	Space	 ') },
+            [KeyCode.KEY_PAGE_UP	/*	33	*/]: function (e) { console.log('	Page up	 ') },
+            [KeyCode.KEY_PAGE_DOWN	/*	34	*/]: function (e) { console.log('	Page down	 ') },
+            [KeyCode.KEY_END	/*	35	*/]: function (e) { console.log('	End	 ') },
+            [KeyCode.KEY_HOME	/*	36	*/]: function (e) { console.log('	Home	 ') },
+            [KeyCode.KEY_LEFT	/*	37	*/]: function (e) { console.log('	Left	 ') },
+            [KeyCode.KEY_UP	/*	38	*/]: function (e) { console.log('	Up	 ') },
+            [KeyCode.KEY_RIGHT	/*	39	*/]: function (e) { console.log('	Right	 ') },
+            [KeyCode.KEY_DOWN	/*	40	*/]: function (e) { console.log('	Down	 ') },
+            [KeyCode.KEY_PRINTSCREEN	/*	44	*/]: function (e) { console.log('	Print Screen	 ') },
+            [KeyCode.KEY_INSERT	/*	45	*/]: function (e) { console.log('	Insert	 ') },
+            [KeyCode.KEY_DELETE	/*	46	*/]: function (e) { console.log('	Delete	 ') },
+            [KeyCode.KEY_0	/*	48	*/]: function (e) { console.log('	0	 ') },
+            [KeyCode.KEY_1	/*	49	*/]: function (e) { console.log('	1	 ') },
+            [KeyCode.KEY_2	/*	50	*/]: function (e) { console.log('	2	 ') },
+            [KeyCode.KEY_3	/*	51	*/]: function (e) { console.log('	3	 ') },
+            [KeyCode.KEY_4	/*	52	*/]: function (e) { console.log('	4	 ') },
+            [KeyCode.KEY_5	/*	53	*/]: function (e) { console.log('	5	 ') },
+            [KeyCode.KEY_6	/*	54	*/]: function (e) { console.log('	6	 ') },
+            [KeyCode.KEY_7	/*	55	*/]: function (e) { console.log('	7	 ') },
+            [KeyCode.KEY_8	/*	56	*/]: function (e) { console.log('	8	 ') },
+            [KeyCode.KEY_9	/*	57	*/]: function (e) { console.log('	9	 ') },
+            [KeyCode.KEY_SEMICOLON	/*	59	*/]: function (e) { console.log('	Semicolon	 ') },
+            [KeyCode.KEY_EQUALS	/*	61	*/]: function (e) { console.log('	Equals	 ') },
+            [KeyCode.KEY_A	/*	65	*/]: function (e) { console.log('	A	 ') },
+            [KeyCode.KEY_B	/*	66	*/]: function (e) { console.log('	B	 ') },
+            [KeyCode.KEY_C	/*	67	*/]: function (e) { console.log('	C	 ') },
+            [KeyCode.KEY_D	/*	68	*/]: function (e) { console.log('	D	 ') },
+            [KeyCode.KEY_E	/*	69	*/]: function (e) { console.log('	E	 ') },
+            [KeyCode.KEY_F	/*	70	*/]: function (e) { console.log('	F	 ') },
+            [KeyCode.KEY_G	/*	71	*/]: function (e) { console.log('	G	 ') },
+            [KeyCode.KEY_H	/*	72	*/]: function (e) { console.log('	H	 ') },
+            [KeyCode.KEY_I	/*	73	*/]: function (e) { console.log('	I	 ') },
+            [KeyCode.KEY_J	/*	74	*/]: function (e) { console.log('	J	 ') },
+            [KeyCode.KEY_K	/*	75	*/]: function (e) { console.log('	K	 ') },
+            [KeyCode.KEY_L	/*	76	*/]: function (e) { console.log('	L	 ') },
+            [KeyCode.KEY_M	/*	77	*/]: function (e) { console.log('	M	 ') },
+            [KeyCode.KEY_N	/*	78	*/]: function (e) { console.log('	N	 ') },
+            [KeyCode.KEY_O	/*	79	*/]: function (e) { console.log('	O	 ') },
+            [KeyCode.KEY_P	/*	80	*/]: function (e) { console.log('	P	 ') },
+            [KeyCode.KEY_Q	/*	81	*/]: function (e) { console.log('	Q	 ') },
+            [KeyCode.KEY_R	/*	82	*/]: function (e) { console.log('	R	 ') },
+            [KeyCode.KEY_S	/*	83	*/]: function (e) { console.log('	S	 ') },
+            [KeyCode.KEY_T	/*	84	*/]: function (e) { console.log('	T	 ') },
+            [KeyCode.KEY_U	/*	85	*/]: function (e) { console.log('	U	 ') },
+            [KeyCode.KEY_V	/*	86	*/]: function (e) { console.log('	V	 ') },
+            [KeyCode.KEY_W	/*	87	*/]: function (e) { console.log('	W	 ') },
+            [KeyCode.KEY_X	/*	88	*/]: function (e) { console.log('	X	 ') },
+            [KeyCode.KEY_Y	/*	89	*/]: function (e) { console.log('	Y	 ') },
+            [KeyCode.KEY_Z	/*	90	*/]: function (e) { console.log('	Z	 ') },
+            [KeyCode.KEY_LEFT_CMD	/*	91	*/]: function (e) { console.log('	Left ⌘	 ') },
+            [KeyCode.KEY_RIGHT_CMD	/*	93	*/]: function (e) { console.log('	Right ⌘	 ') },
+            [KeyCode.KEY_CONTEXT_MENU	/*	93	*/]: function (e) { console.log('	Context Menu	 ') },
+            [KeyCode.KEY_NUMPAD0	/*	96	*/]: function (e) { console.log('	Numpad 0	 ') },
+            [KeyCode.KEY_NUMPAD1	/*	97	*/]: function (e) { console.log('	Numpad 1	 ') },
+            [KeyCode.KEY_NUMPAD2	/*	98	*/]: function (e) { console.log('	Numpad 2	 ') },
+            [KeyCode.KEY_NUMPAD3	/*	99	*/]: function (e) { console.log('	Numpad 3	 ') },
+            [KeyCode.KEY_NUMPAD4	/*	100	*/]: function (e) { console.log('	Numpad 4	 ') },
+            [KeyCode.KEY_NUMPAD5	/*	101	*/]: function (e) { console.log('	Numpad 5	 ') },
+            [KeyCode.KEY_NUMPAD6	/*	102	*/]: function (e) { console.log('	Numpad 6	 ') },
+            [KeyCode.KEY_NUMPAD7	/*	103	*/]: function (e) { console.log('	Numpad 7	 ') },
+            [KeyCode.KEY_NUMPAD8	/*	104	*/]: function (e) { console.log('	Numpad 8	 ') },
+            [KeyCode.KEY_NUMPAD9	/*	105	*/]: function (e) { console.log('	Numpad 9	 ') },
+            [KeyCode.KEY_MULTIPLY	/*	106	*/]: function (e) { console.log('	Multiply	 ') },
+            [KeyCode.KEY_ADD	/*	107	*/]: function (e) { console.log('	Add	 ') },
+            [KeyCode.KEY_SEPARATOR	/*	108	*/]: function (e) { console.log('	Separator	 ') },
+            [KeyCode.KEY_SUBTRACT	/*	109	*/]: function (e) { console.log('	Subtract	 ') },
+            [KeyCode.KEY_DECIMAL	/*	110	*/]: function (e) { console.log('	Decimal	 ') },
+            [KeyCode.KEY_DIVIDE	/*	111	*/]: function (e) { console.log('	Divide	 ') },
+            [KeyCode.KEY_F1	/*	112	*/]: function (e) { console.log('	F1	 ') },
+            [KeyCode.KEY_F2	/*	113	*/]: function (e) { console.log('	F2	 ') },
+            [KeyCode.KEY_F3	/*	114	*/]: function (e) { console.log('	F3	 ') },
+            [KeyCode.KEY_F4	/*	115	*/]: function (e) { console.log('	F4	 ') },
+            [KeyCode.KEY_F5	/*	116	*/]: function (e) { console.log('	F5	 ') },
+            [KeyCode.KEY_F6	/*	117	*/]: function (e) { console.log('	F6	 ') },
+            [KeyCode.KEY_F7	/*	118	*/]: function (e) { console.log('	F7	 ') },
+            [KeyCode.KEY_F8	/*	119	*/]: function (e) { console.log('	F8	 ') },
+            [KeyCode.KEY_F9	/*	120	*/]: function (e) { console.log('	F9	 ') },
+            [KeyCode.KEY_F10	/*	121	*/]: function (e) { console.log('	F10	 ') },
+            [KeyCode.KEY_F11	/*	122	*/]: function (e) { console.log('	F11	 ') },
+            [KeyCode.KEY_F12	/*	123	*/]: function (e) { console.log('	F12	 ') },
+            [KeyCode.KEY_F13	/*	124	*/]: function (e) { console.log('	F13	 ') },
+            [KeyCode.KEY_F14	/*	125	*/]: function (e) { console.log('	F14	 ') },
+            [KeyCode.KEY_F15	/*	126	*/]: function (e) { console.log('	F15	 ') },
+            [KeyCode.KEY_F16	/*	127	*/]: function (e) { console.log('	F16	 ') },
+            [KeyCode.KEY_F17	/*	128	*/]: function (e) { console.log('	F17	 ') },
+            [KeyCode.KEY_F18	/*	129	*/]: function (e) { console.log('	F18	 ') },
+            [KeyCode.KEY_F19	/*	130	*/]: function (e) { console.log('	F19	 ') },
+            [KeyCode.KEY_F20	/*	131	*/]: function (e) { console.log('	F20	 ') },
+            [KeyCode.KEY_F21	/*	132	*/]: function (e) { console.log('	F21	 ') },
+            [KeyCode.KEY_F22	/*	133	*/]: function (e) { console.log('	F22	 ') },
+            [KeyCode.KEY_F23	/*	134	*/]: function (e) { console.log('	F23	 ') },
+            [KeyCode.KEY_F24	/*	135	*/]: function (e) { console.log('	F24	 ') },
+            [KeyCode.KEY_NUM_LOCK	/*	144	*/]: function (e) { console.log('	Num Lock	 ') },
+            [KeyCode.KEY_SCROLL_LOCK	/*	145	*/]: function (e) { console.log('	Scroll Lock	 ') },
+            [KeyCode.KEY_COMMA	/*	188	*/]: function (e) { console.log('	Comma	 ') },
+            [KeyCode.KEY_PERIOD	/*	190	*/]: function (e) { console.log('	Period	 ') },
+            [KeyCode.KEY_SLASH	/*	191	*/]: function (e) { console.log('	Slash	 ') },
+            [KeyCode.KEY_BACK_QUOTE	/*	192	*/]: function (e) { console.log('	Back Quote	 ') },
+            [KeyCode.KEY_OPEN_BRACKET	/*	219	*/]: function (e) { console.log('	Open Bracket	 ') },
+            [KeyCode.KEY_BACK_SLASH	/*	220	*/]: function (e) { console.log('	Back Slash	 ') },
+            [KeyCode.KEY_CLOSE_BRACKET	/*	221	*/]: function (e) { console.log('	Close Bracket	 ') },
+            [KeyCode.KEY_QUOTE	/*	222	*/]: function (e) { console.log('	Quote	 ') },
+            [KeyCode.KEY_META	/*	224	*/]: function (e) { console.log('	Meta	 ') },
+        }
+
+        var mapPractice = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            var listener = keydispatcher[code];
+            if (listener) {
+                listener(e);
+            }
+        };
+
+        var elseIfPractice = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            if (code === KeyCode.KEY_CANCEL	/*	3	*/) { console.log('	Cancel	 ') }
+            else if (code === KeyCode.KEY_HELP	/*	6	*/) { console.log('	Help	 ') }
+            else if (code === KeyCode.KEY_BACK_SPACE	/*	8	*/) { console.log('	Backspace	 ') }
+            else if (code === KeyCode.KEY_TAB	/*	9	*/) { console.log('	Tab	 ') }
+            else if (code === KeyCode.KEY_CLEAR	/*	12	*/) { console.log('	Clear	 ') }
+            else if (code === KeyCode.KEY_RETURN	/*	13	*/) { console.log('	Return	 ') }
+            else if (code === KeyCode.KEY_ENTER	/*	14	*/) { console.log('	Enter	 ') }
+            else if (code === KeyCode.KEY_SHIFT	/*	16	*/) { console.log('	Shiftt	 ') }
+            else if (code === KeyCode.KEY_CONTROL	/*	17	*/) { console.log('	Control	 ') }
+            else if (code === KeyCode.KEY_ALT	/*	18	*/) { console.log('	Alt	 ') }
+            else if (code === KeyCode.KEY_PAUSE	/*	19	*/) { console.log('	Pause	 ') }
+            else if (code === KeyCode.KEY_CAPS_LOCK	/*	20	*/) { console.log('	Caps Lock	 ') }
+            else if (code === KeyCode.KEY_ESCAPE	/*	27	*/) { console.log('	Escape	 ') }
+            else if (code === KeyCode.KEY_SPACE	/*	32	*/) { console.log('	Space	 ') }
+            else if (code === KeyCode.KEY_PAGE_UP	/*	33	*/) { console.log('	Page up	 ') }
+            else if (code === KeyCode.KEY_PAGE_DOWN	/*	34	*/) { console.log('	Page down	 ') }
+            else if (code === KeyCode.KEY_END	/*	35	*/) { console.log('	End	 ') }
+            else if (code === KeyCode.KEY_HOME	/*	36	*/) { console.log('	Home	 ') }
+            else if (code === KeyCode.KEY_LEFT	/*	37	*/) { console.log('	Left	 ') }
+            else if (code === KeyCode.KEY_UP	/*	38	*/) { console.log('	Up	 ') }
+            else if (code === KeyCode.KEY_RIGHT	/*	39	*/) { console.log('	Right	 ') }
+            else if (code === KeyCode.KEY_DOWN	/*	40	*/) { console.log('	Down	 ') }
+            else if (code === KeyCode.KEY_PRINTSCREEN	/*	44	*/) { console.log('	Print Screen	 ') }
+            else if (code === KeyCode.KEY_INSERT	/*	45	*/) { console.log('	Insert	 ') }
+            else if (code === KeyCode.KEY_DELETE	/*	46	*/) { console.log('	Delete	 ') }
+            else if (code === KeyCode.KEY_0	/*	48	*/) { console.log('	0	 ') }
+            else if (code === KeyCode.KEY_1	/*	49	*/) { console.log('	1	 ') }
+            else if (code === KeyCode.KEY_2	/*	50	*/) { console.log('	2	 ') }
+            else if (code === KeyCode.KEY_3	/*	51	*/) { console.log('	3	 ') }
+            else if (code === KeyCode.KEY_4	/*	52	*/) { console.log('	4	 ') }
+            else if (code === KeyCode.KEY_5	/*	53	*/) { console.log('	5	 ') }
+            else if (code === KeyCode.KEY_6	/*	54	*/) { console.log('	6	 ') }
+            else if (code === KeyCode.KEY_7	/*	55	*/) { console.log('	7	 ') }
+            else if (code === KeyCode.KEY_8	/*	56	*/) { console.log('	8	 ') }
+            else if (code === KeyCode.KEY_9	/*	57	*/) { console.log('	9	 ') }
+            else if (code === KeyCode.KEY_SEMICOLON	/*	59	*/) { console.log('	Semicolon	 ') }
+            else if (code === KeyCode.KEY_EQUALS	/*	61	*/) { console.log('	Equals	 ') }
+            else if (code === KeyCode.KEY_A	/*	65	*/) { console.log('	A	 ') }
+            else if (code === KeyCode.KEY_B	/*	66	*/) { console.log('	B	 ') }
+            else if (code === KeyCode.KEY_C	/*	67	*/) { console.log('	C	 ') }
+            else if (code === KeyCode.KEY_D	/*	68	*/) { console.log('	D	 ') }
+            else if (code === KeyCode.KEY_E	/*	69	*/) { console.log('	E	 ') }
+            else if (code === KeyCode.KEY_F	/*	70	*/) { console.log('	F	 ') }
+            else if (code === KeyCode.KEY_G	/*	71	*/) { console.log('	G	 ') }
+            else if (code === KeyCode.KEY_H	/*	72	*/) { console.log('	H	 ') }
+            else if (code === KeyCode.KEY_I	/*	73	*/) { console.log('	I	 ') }
+            else if (code === KeyCode.KEY_J	/*	74	*/) { console.log('	J	 ') }
+            else if (code === KeyCode.KEY_K	/*	75	*/) { console.log('	K	 ') }
+            else if (code === KeyCode.KEY_L	/*	76	*/) { console.log('	L	 ') }
+            else if (code === KeyCode.KEY_M	/*	77	*/) { console.log('	M	 ') }
+            else if (code === KeyCode.KEY_N	/*	78	*/) { console.log('	N	 ') }
+            else if (code === KeyCode.KEY_O	/*	79	*/) { console.log('	O	 ') }
+            else if (code === KeyCode.KEY_P	/*	80	*/) { console.log('	P	 ') }
+            else if (code === KeyCode.KEY_Q	/*	81	*/) { console.log('	Q	 ') }
+            else if (code === KeyCode.KEY_R	/*	82	*/) { console.log('	R	 ') }
+            else if (code === KeyCode.KEY_S	/*	83	*/) { console.log('	S	 ') }
+            else if (code === KeyCode.KEY_T	/*	84	*/) { console.log('	T	 ') }
+            else if (code === KeyCode.KEY_U	/*	85	*/) { console.log('	U	 ') }
+            else if (code === KeyCode.KEY_V	/*	86	*/) { console.log('	V	 ') }
+            else if (code === KeyCode.KEY_W	/*	87	*/) { console.log('	W	 ') }
+            else if (code === KeyCode.KEY_X	/*	88	*/) { console.log('	X	 ') }
+            else if (code === KeyCode.KEY_Y	/*	89	*/) { console.log('	Y	 ') }
+            else if (code === KeyCode.KEY_Z	/*	90	*/) { console.log('	Z	 ') }
+            else if (code === KeyCode.KEY_LEFT_CMD	/*	91	*/) { console.log('	Left ⌘	 ') }
+            else if (code === KeyCode.KEY_RIGHT_CMD	/*	93	*/) { console.log('	Right ⌘	 ') }
+            else if (code === KeyCode.KEY_CONTEXT_MENU	/*	93	*/) { console.log('	Context Menu	 ') }
+            else if (code === KeyCode.KEY_NUMPAD0	/*	96	*/) { console.log('	Numpad 0	 ') }
+            else if (code === KeyCode.KEY_NUMPAD1	/*	97	*/) { console.log('	Numpad 1	 ') }
+            else if (code === KeyCode.KEY_NUMPAD2	/*	98	*/) { console.log('	Numpad 2	 ') }
+            else if (code === KeyCode.KEY_NUMPAD3	/*	99	*/) { console.log('	Numpad 3	 ') }
+            else if (code === KeyCode.KEY_NUMPAD4	/*	100	*/) { console.log('	Numpad 4	 ') }
+            else if (code === KeyCode.KEY_NUMPAD5	/*	101	*/) { console.log('	Numpad 5	 ') }
+            else if (code === KeyCode.KEY_NUMPAD6	/*	102	*/) { console.log('	Numpad 6	 ') }
+            else if (code === KeyCode.KEY_NUMPAD7	/*	103	*/) { console.log('	Numpad 7	 ') }
+            else if (code === KeyCode.KEY_NUMPAD8	/*	104	*/) { console.log('	Numpad 8	 ') }
+            else if (code === KeyCode.KEY_NUMPAD9	/*	105	*/) { console.log('	Numpad 9	 ') }
+            else if (code === KeyCode.KEY_MULTIPLY	/*	106	*/) { console.log('	Multiply	 ') }
+            else if (code === KeyCode.KEY_ADD	/*	107	*/) { console.log('	Add	 ') }
+            else if (code === KeyCode.KEY_SEPARATOR	/*	108	*/) { console.log('	Separator	 ') }
+            else if (code === KeyCode.KEY_SUBTRACT	/*	109	*/) { console.log('	Subtract	 ') }
+            else if (code === KeyCode.KEY_DECIMAL	/*	110	*/) { console.log('	Decimal	 ') }
+            else if (code === KeyCode.KEY_DIVIDE	/*	111	*/) { console.log('	Divide	 ') }
+            else if (code === KeyCode.KEY_F1	/*	112	*/) { console.log('	F1	 ') }
+            else if (code === KeyCode.KEY_F2	/*	113	*/) { console.log('	F2	 ') }
+            else if (code === KeyCode.KEY_F3	/*	114	*/) { console.log('	F3	 ') }
+            else if (code === KeyCode.KEY_F4	/*	115	*/) { console.log('	F4	 ') }
+            else if (code === KeyCode.KEY_F5	/*	116	*/) { console.log('	F5	 ') }
+            else if (code === KeyCode.KEY_F6	/*	117	*/) { console.log('	F6	 ') }
+            else if (code === KeyCode.KEY_F7	/*	118	*/) { console.log('	F7	 ') }
+            else if (code === KeyCode.KEY_F8	/*	119	*/) { console.log('	F8	 ') }
+            else if (code === KeyCode.KEY_F9	/*	120	*/) { console.log('	F9	 ') }
+            else if (code === KeyCode.KEY_F10	/*	121	*/) { console.log('	F10	 ') }
+            else if (code === KeyCode.KEY_F11	/*	122	*/) { console.log('	F11	 ') }
+            else if (code === KeyCode.KEY_F12	/*	123	*/) { console.log('	F12	 ') }
+            else if (code === KeyCode.KEY_F13	/*	124	*/) { console.log('	F13	 ') }
+            else if (code === KeyCode.KEY_F14	/*	125	*/) { console.log('	F14	 ') }
+            else if (code === KeyCode.KEY_F15	/*	126	*/) { console.log('	F15	 ') }
+            else if (code === KeyCode.KEY_F16	/*	127	*/) { console.log('	F16	 ') }
+            else if (code === KeyCode.KEY_F17	/*	128	*/) { console.log('	F17	 ') }
+            else if (code === KeyCode.KEY_F18	/*	129	*/) { console.log('	F18	 ') }
+            else if (code === KeyCode.KEY_F19	/*	130	*/) { console.log('	F19	 ') }
+            else if (code === KeyCode.KEY_F20	/*	131	*/) { console.log('	F20	 ') }
+            else if (code === KeyCode.KEY_F21	/*	132	*/) { console.log('	F21	 ') }
+            else if (code === KeyCode.KEY_F22	/*	133	*/) { console.log('	F22	 ') }
+            else if (code === KeyCode.KEY_F23	/*	134	*/) { console.log('	F23	 ') }
+            else if (code === KeyCode.KEY_F24	/*	135	*/) { console.log('	F24	 ') }
+            else if (code === KeyCode.KEY_NUM_LOCK	/*	144	*/) { console.log('	Num Lock	 ') }
+            else if (code === KeyCode.KEY_SCROLL_LOCK	/*	145	*/) { console.log('	Scroll Lock	 ') }
+            else if (code === KeyCode.KEY_COMMA	/*	188	*/) { console.log('	Comma	 ') }
+            else if (code === KeyCode.KEY_PERIOD	/*	190	*/) { console.log('	Period	 ') }
+            else if (code === KeyCode.KEY_SLASH	/*	191	*/) { console.log('	Slash	 ') }
+            else if (code === KeyCode.KEY_BACK_QUOTE	/*	192	*/) { console.log('	Back Quote	 ') }
+            else if (code === KeyCode.KEY_OPEN_BRACKET	/*	219	*/) { console.log('	Open Bracket	 ') }
+            else if (code === KeyCode.KEY_BACK_SLASH	/*	220	*/) { console.log('	Back Slash	 ') }
+            else if (code === KeyCode.KEY_CLOSE_BRACKET	/*	221	*/) { console.log('	Close Bracket	 ') }
+            else if (code === KeyCode.KEY_QUOTE	/*	222	*/) { console.log('	Quote	 ') }
+            else if (code === KeyCode.KEY_META	/*	224	*/) { console.log('	Meta	 ') }
+        };
+        var onlyIfPractice = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            if (code === KeyCode.KEY_CANCEL	/*	3	*/) { console.log('	Cancel	 ') }
+            if (code === KeyCode.KEY_HELP	/*	6	*/) { console.log('	Help	 ') }
+            if (code === KeyCode.KEY_BACK_SPACE	/*	8	*/) { console.log('	Backspace	 ') }
+            if (code === KeyCode.KEY_TAB	/*	9	*/) { console.log('	Tab	 ') }
+            if (code === KeyCode.KEY_CLEAR	/*	12	*/) { console.log('	Clear	 ') }
+            if (code === KeyCode.KEY_RETURN	/*	13	*/) { console.log('	Return	 ') }
+            if (code === KeyCode.KEY_ENTER	/*	14	*/) { console.log('	Enter	 ') }
+            if (code === KeyCode.KEY_SHIFT	/*	16	*/) { console.log('	Shiftt	 ') }
+            if (code === KeyCode.KEY_CONTROL	/*	17	*/) { console.log('	Control	 ') }
+            if (code === KeyCode.KEY_ALT	/*	18	*/) { console.log('	Alt	 ') }
+            if (code === KeyCode.KEY_PAUSE	/*	19	*/) { console.log('	Pause	 ') }
+            if (code === KeyCode.KEY_CAPS_LOCK	/*	20	*/) { console.log('	Caps Lock	 ') }
+            if (code === KeyCode.KEY_ESCAPE	/*	27	*/) { console.log('	Escape	 ') }
+            if (code === KeyCode.KEY_SPACE	/*	32	*/) { console.log('	Space	 ') }
+            if (code === KeyCode.KEY_PAGE_UP	/*	33	*/) { console.log('	Page up	 ') }
+            if (code === KeyCode.KEY_PAGE_DOWN	/*	34	*/) { console.log('	Page down	 ') }
+            if (code === KeyCode.KEY_END	/*	35	*/) { console.log('	End	 ') }
+            if (code === KeyCode.KEY_HOME	/*	36	*/) { console.log('	Home	 ') }
+            if (code === KeyCode.KEY_LEFT	/*	37	*/) { console.log('	Left	 ') }
+            if (code === KeyCode.KEY_UP	/*	38	*/) { console.log('	Up	 ') }
+            if (code === KeyCode.KEY_RIGHT	/*	39	*/) { console.log('	Right	 ') }
+            if (code === KeyCode.KEY_DOWN	/*	40	*/) { console.log('	Down	 ') }
+            if (code === KeyCode.KEY_PRINTSCREEN	/*	44	*/) { console.log('	Print Screen	 ') }
+            if (code === KeyCode.KEY_INSERT	/*	45	*/) { console.log('	Insert	 ') }
+            if (code === KeyCode.KEY_DELETE	/*	46	*/) { console.log('	Delete	 ') }
+            if (code === KeyCode.KEY_0	/*	48	*/) { console.log('	0	 ') }
+            if (code === KeyCode.KEY_1	/*	49	*/) { console.log('	1	 ') }
+            if (code === KeyCode.KEY_2	/*	50	*/) { console.log('	2	 ') }
+            if (code === KeyCode.KEY_3	/*	51	*/) { console.log('	3	 ') }
+            if (code === KeyCode.KEY_4	/*	52	*/) { console.log('	4	 ') }
+            if (code === KeyCode.KEY_5	/*	53	*/) { console.log('	5	 ') }
+            if (code === KeyCode.KEY_6	/*	54	*/) { console.log('	6	 ') }
+            if (code === KeyCode.KEY_7	/*	55	*/) { console.log('	7	 ') }
+            if (code === KeyCode.KEY_8	/*	56	*/) { console.log('	8	 ') }
+            if (code === KeyCode.KEY_9	/*	57	*/) { console.log('	9	 ') }
+            if (code === KeyCode.KEY_SEMICOLON	/*	59	*/) { console.log('	Semicolon	 ') }
+            if (code === KeyCode.KEY_EQUALS	/*	61	*/) { console.log('	Equals	 ') }
+            if (code === KeyCode.KEY_A	/*	65	*/) { console.log('	A	 ') }
+            if (code === KeyCode.KEY_B	/*	66	*/) { console.log('	B	 ') }
+            if (code === KeyCode.KEY_C	/*	67	*/) { console.log('	C	 ') }
+            if (code === KeyCode.KEY_D	/*	68	*/) { console.log('	D	 ') }
+            if (code === KeyCode.KEY_E	/*	69	*/) { console.log('	E	 ') }
+            if (code === KeyCode.KEY_F	/*	70	*/) { console.log('	F	 ') }
+            if (code === KeyCode.KEY_G	/*	71	*/) { console.log('	G	 ') }
+            if (code === KeyCode.KEY_H	/*	72	*/) { console.log('	H	 ') }
+            if (code === KeyCode.KEY_I	/*	73	*/) { console.log('	I	 ') }
+            if (code === KeyCode.KEY_J	/*	74	*/) { console.log('	J	 ') }
+            if (code === KeyCode.KEY_K	/*	75	*/) { console.log('	K	 ') }
+            if (code === KeyCode.KEY_L	/*	76	*/) { console.log('	L	 ') }
+            if (code === KeyCode.KEY_M	/*	77	*/) { console.log('	M	 ') }
+            if (code === KeyCode.KEY_N	/*	78	*/) { console.log('	N	 ') }
+            if (code === KeyCode.KEY_O	/*	79	*/) { console.log('	O	 ') }
+            if (code === KeyCode.KEY_P	/*	80	*/) { console.log('	P	 ') }
+            if (code === KeyCode.KEY_Q	/*	81	*/) { console.log('	Q	 ') }
+            if (code === KeyCode.KEY_R	/*	82	*/) { console.log('	R	 ') }
+            if (code === KeyCode.KEY_S	/*	83	*/) { console.log('	S	 ') }
+            if (code === KeyCode.KEY_T	/*	84	*/) { console.log('	T	 ') }
+            if (code === KeyCode.KEY_U	/*	85	*/) { console.log('	U	 ') }
+            if (code === KeyCode.KEY_V	/*	86	*/) { console.log('	V	 ') }
+            if (code === KeyCode.KEY_W	/*	87	*/) { console.log('	W	 ') }
+            if (code === KeyCode.KEY_X	/*	88	*/) { console.log('	X	 ') }
+            if (code === KeyCode.KEY_Y	/*	89	*/) { console.log('	Y	 ') }
+            if (code === KeyCode.KEY_Z	/*	90	*/) { console.log('	Z	 ') }
+            if (code === KeyCode.KEY_LEFT_CMD	/*	91	*/) { console.log('	Left ⌘	 ') }
+            if (code === KeyCode.KEY_RIGHT_CMD	/*	93	*/) { console.log('	Right ⌘	 ') }
+            if (code === KeyCode.KEY_CONTEXT_MENU	/*	93	*/) { console.log('	Context Menu	 ') }
+            if (code === KeyCode.KEY_NUMPAD0	/*	96	*/) { console.log('	Numpad 0	 ') }
+            if (code === KeyCode.KEY_NUMPAD1	/*	97	*/) { console.log('	Numpad 1	 ') }
+            if (code === KeyCode.KEY_NUMPAD2	/*	98	*/) { console.log('	Numpad 2	 ') }
+            if (code === KeyCode.KEY_NUMPAD3	/*	99	*/) { console.log('	Numpad 3	 ') }
+            if (code === KeyCode.KEY_NUMPAD4	/*	100	*/) { console.log('	Numpad 4	 ') }
+            if (code === KeyCode.KEY_NUMPAD5	/*	101	*/) { console.log('	Numpad 5	 ') }
+            if (code === KeyCode.KEY_NUMPAD6	/*	102	*/) { console.log('	Numpad 6	 ') }
+            if (code === KeyCode.KEY_NUMPAD7	/*	103	*/) { console.log('	Numpad 7	 ') }
+            if (code === KeyCode.KEY_NUMPAD8	/*	104	*/) { console.log('	Numpad 8	 ') }
+            if (code === KeyCode.KEY_NUMPAD9	/*	105	*/) { console.log('	Numpad 9	 ') }
+            if (code === KeyCode.KEY_MULTIPLY	/*	106	*/) { console.log('	Multiply	 ') }
+            if (code === KeyCode.KEY_ADD	/*	107	*/) { console.log('	Add	 ') }
+            if (code === KeyCode.KEY_SEPARATOR	/*	108	*/) { console.log('	Separator	 ') }
+            if (code === KeyCode.KEY_SUBTRACT	/*	109	*/) { console.log('	Subtract	 ') }
+            if (code === KeyCode.KEY_DECIMAL	/*	110	*/) { console.log('	Decimal	 ') }
+            if (code === KeyCode.KEY_DIVIDE	/*	111	*/) { console.log('	Divide	 ') }
+            if (code === KeyCode.KEY_F1	/*	112	*/) { console.log('	F1	 ') }
+            if (code === KeyCode.KEY_F2	/*	113	*/) { console.log('	F2	 ') }
+            if (code === KeyCode.KEY_F3	/*	114	*/) { console.log('	F3	 ') }
+            if (code === KeyCode.KEY_F4	/*	115	*/) { console.log('	F4	 ') }
+            if (code === KeyCode.KEY_F5	/*	116	*/) { console.log('	F5	 ') }
+            if (code === KeyCode.KEY_F6	/*	117	*/) { console.log('	F6	 ') }
+            if (code === KeyCode.KEY_F7	/*	118	*/) { console.log('	F7	 ') }
+            if (code === KeyCode.KEY_F8	/*	119	*/) { console.log('	F8	 ') }
+            if (code === KeyCode.KEY_F9	/*	120	*/) { console.log('	F9	 ') }
+            if (code === KeyCode.KEY_F10	/*	121	*/) { console.log('	F10	 ') }
+            if (code === KeyCode.KEY_F11	/*	122	*/) { console.log('	F11	 ') }
+            if (code === KeyCode.KEY_F12	/*	123	*/) { console.log('	F12	 ') }
+            if (code === KeyCode.KEY_F13	/*	124	*/) { console.log('	F13	 ') }
+            if (code === KeyCode.KEY_F14	/*	125	*/) { console.log('	F14	 ') }
+            if (code === KeyCode.KEY_F15	/*	126	*/) { console.log('	F15	 ') }
+            if (code === KeyCode.KEY_F16	/*	127	*/) { console.log('	F16	 ') }
+            if (code === KeyCode.KEY_F17	/*	128	*/) { console.log('	F17	 ') }
+            if (code === KeyCode.KEY_F18	/*	129	*/) { console.log('	F18	 ') }
+            if (code === KeyCode.KEY_F19	/*	130	*/) { console.log('	F19	 ') }
+            if (code === KeyCode.KEY_F20	/*	131	*/) { console.log('	F20	 ') }
+            if (code === KeyCode.KEY_F21	/*	132	*/) { console.log('	F21	 ') }
+            if (code === KeyCode.KEY_F22	/*	133	*/) { console.log('	F22	 ') }
+            if (code === KeyCode.KEY_F23	/*	134	*/) { console.log('	F23	 ') }
+            if (code === KeyCode.KEY_F24	/*	135	*/) { console.log('	F24	 ') }
+            if (code === KeyCode.KEY_NUM_LOCK	/*	144	*/) { console.log('	Num Lock	 ') }
+            if (code === KeyCode.KEY_SCROLL_LOCK	/*	145	*/) { console.log('	Scroll Lock	 ') }
+            if (code === KeyCode.KEY_COMMA	/*	188	*/) { console.log('	Comma	 ') }
+            if (code === KeyCode.KEY_PERIOD	/*	190	*/) { console.log('	Period	 ') }
+            if (code === KeyCode.KEY_SLASH	/*	191	*/) { console.log('	Slash	 ') }
+            if (code === KeyCode.KEY_BACK_QUOTE	/*	192	*/) { console.log('	Back Quote	 ') }
+            if (code === KeyCode.KEY_OPEN_BRACKET	/*	219	*/) { console.log('	Open Bracket	 ') }
+            if (code === KeyCode.KEY_BACK_SLASH	/*	220	*/) { console.log('	Back Slash	 ') }
+            if (code === KeyCode.KEY_CLOSE_BRACKET	/*	221	*/) { console.log('	Close Bracket	 ') }
+            if (code === KeyCode.KEY_QUOTE	/*	222	*/) { console.log('	Quote	 ') }
+            if (code === KeyCode.KEY_META	/*	224	*/) { console.log('	Meta	 ') }
+        };
+
+        var switchCasePractice = function (e) {
+            var code = e.keyCode ? e.keyCode : e.which;
+            switch (code) {
+                case KeyCode.KEY_CANCEL	/*	3	*/: console.log('	Cancel	 '); break;
+                case KeyCode.KEY_HELP	/*	6	*/: console.log('	Help	 '); break;
+                case KeyCode.KEY_BACK_SPACE	/*	8	*/: console.log('	Backspace	 '); break;
+                case KeyCode.KEY_TAB	/*	9	*/: console.log('	Tab	 '); break;
+                case KeyCode.KEY_CLEAR	/*	12	*/: console.log('	Clear	 '); break;
+                case KeyCode.KEY_RETURN	/*	13	*/: console.log('	Return	 '); break;
+                case KeyCode.KEY_ENTER	/*	14	*/: console.log('	Enter	 '); break;
+                case KeyCode.KEY_SHIFT	/*	16	*/: console.log('	Shift	 '); break;
+                case KeyCode.KEY_CONTROL	/*	17	*/: console.log('	Control	 '); break;
+                case KeyCode.KEY_ALT	/*	18	*/: console.log('	Alt	 '); break;
+                case KeyCode.KEY_PAUSE	/*	19	*/: console.log('	Pause	 '); break;
+                case KeyCode.KEY_CAPS_LOCK	/*	20	*/: console.log('	Caps Lock	 '); break;
+                case KeyCode.KEY_ESCAPE	/*	27	*/: console.log('	Escape	 '); break;
+                case KeyCode.KEY_SPACE	/*	32	*/: console.log('	Space	 '); break;
+                case KeyCode.KEY_PAGE_UP	/*	33	*/: console.log('	Page up	 '); break;
+                case KeyCode.KEY_PAGE_DOWN	/*	34	*/: console.log('	Page down	 '); break;
+                case KeyCode.KEY_END	/*	35	*/: console.log('	End	 '); break;
+                case KeyCode.KEY_HOME	/*	36	*/: console.log('	Home	 '); break;
+                case KeyCode.KEY_LEFT	/*	37	*/: console.log('	Left	 '); break;
+                case KeyCode.KEY_UP	/*	38	*/: console.log('	Up	 '); break;
+                case KeyCode.KEY_RIGHT	/*	39	*/: console.log('	Right	 '); break;
+                case KeyCode.KEY_DOWN	/*	40	*/: console.log('	Down	 '); break;
+                case KeyCode.KEY_PRINTSCREEN	/*	44	*/: console.log('	Print Screen	 '); break;
+                case KeyCode.KEY_INSERT	/*	45	*/: console.log('	Insert	 '); break;
+                case KeyCode.KEY_DELETE	/*	46	*/: console.log('	Delete	 '); break;
+                case KeyCode.KEY_0	/*	48	*/: console.log('	0	 '); break;
+                case KeyCode.KEY_1	/*	49	*/: console.log('	1	 '); break;
+                case KeyCode.KEY_2	/*	50	*/: console.log('	2	 '); break;
+                case KeyCode.KEY_3	/*	51	*/: console.log('	3	 '); break;
+                case KeyCode.KEY_4	/*	52	*/: console.log('	4	 '); break;
+                case KeyCode.KEY_5	/*	53	*/: console.log('	5	 '); break;
+                case KeyCode.KEY_6	/*	54	*/: console.log('	6	 '); break;
+                case KeyCode.KEY_7	/*	55	*/: console.log('	7	 '); break;
+                case KeyCode.KEY_8	/*	56	*/: console.log('	8	 '); break;
+                case KeyCode.KEY_9	/*	57	*/: console.log('	9	 '); break;
+                case KeyCode.KEY_SEMICOLON	/*	59	*/: console.log('	Semicolon	 '); break;
+                case KeyCode.KEY_EQUALS	/*	61	*/: console.log('	Equals	 '); break;
+                case KeyCode.KEY_A	/*	65	*/: console.log('	A	 '); break;
+                case KeyCode.KEY_B	/*	66	*/: console.log('	B	 '); break;
+                case KeyCode.KEY_C	/*	67	*/: console.log('	C	 '); break;
+                case KeyCode.KEY_D	/*	68	*/: console.log('	D	 '); break;
+                case KeyCode.KEY_E	/*	69	*/: console.log('	E	 '); break;
+                case KeyCode.KEY_F	/*	70	*/: console.log('	F	 '); break;
+                case KeyCode.KEY_G	/*	71	*/: console.log('	G	 '); break;
+                case KeyCode.KEY_H	/*	72	*/: console.log('	H	 '); break;
+                case KeyCode.KEY_I	/*	73	*/: console.log('	I	 '); break;
+                case KeyCode.KEY_J	/*	74	*/: console.log('	J	 '); break;
+                case KeyCode.KEY_K	/*	75	*/: console.log('	K	 '); break;
+                case KeyCode.KEY_L	/*	76	*/: console.log('	L	 '); break;
+                case KeyCode.KEY_M	/*	77	*/: console.log('	M	 '); break;
+                case KeyCode.KEY_N	/*	78	*/: console.log('	N	 '); break;
+                case KeyCode.KEY_O	/*	79	*/: console.log('	O	 '); break;
+                case KeyCode.KEY_P	/*	80	*/: console.log('	P	 '); break;
+                case KeyCode.KEY_Q	/*	81	*/: console.log('	Q	 '); break;
+                case KeyCode.KEY_R	/*	82	*/: console.log('	R	 '); break;
+                case KeyCode.KEY_S	/*	83	*/: console.log('	S	 '); break;
+                case KeyCode.KEY_T	/*	84	*/: console.log('	T	 '); break;
+                case KeyCode.KEY_U	/*	85	*/: console.log('	U	 '); break;
+                case KeyCode.KEY_V	/*	86	*/: console.log('	V	 '); break;
+                case KeyCode.KEY_W	/*	87	*/: console.log('	W	 '); break;
+                case KeyCode.KEY_X	/*	88	*/: console.log('	X	 '); break;
+                case KeyCode.KEY_Y	/*	89	*/: console.log('	Y	 '); break;
+                case KeyCode.KEY_Z	/*	90	*/: console.log('	Z	 '); break;
+                case KeyCode.KEY_LEFT_CMD	/*	91	*/: console.log('	Left ⌘	 '); break;
+                case KeyCode.KEY_RIGHT_CMD	/*	93	*/: console.log('	Right ⌘	 '); break;
+                case KeyCode.KEY_CONTEXT_MENU	/*	93	*/: console.log('	Context Menu	 '); break;
+                case KeyCode.KEY_NUMPAD0	/*	96	*/: console.log('	Numpad 0	 '); break;
+                case KeyCode.KEY_NUMPAD1	/*	97	*/: console.log('	Numpad 1	 '); break;
+                case KeyCode.KEY_NUMPAD2	/*	98	*/: console.log('	Numpad 2	 '); break;
+                case KeyCode.KEY_NUMPAD3	/*	99	*/: console.log('	Numpad 3	 '); break;
+                case KeyCode.KEY_NUMPAD4	/*	100	*/: console.log('	Numpad 4	 '); break;
+                case KeyCode.KEY_NUMPAD5	/*	101	*/: console.log('	Numpad 5	 '); break;
+                case KeyCode.KEY_NUMPAD6	/*	102	*/: console.log('	Numpad 6	 '); break;
+                case KeyCode.KEY_NUMPAD7	/*	103	*/: console.log('	Numpad 7	 '); break;
+                case KeyCode.KEY_NUMPAD8	/*	104	*/: console.log('	Numpad 8	 '); break;
+                case KeyCode.KEY_NUMPAD9	/*	105	*/: console.log('	Numpad 9	 '); break;
+                case KeyCode.KEY_MULTIPLY	/*	106	*/: console.log('	Multiply	 '); break;
+                case KeyCode.KEY_ADD	/*	107	*/: console.log('	Add	 '); break;
+                case KeyCode.KEY_SEPARATOR	/*	108	*/: console.log('	Separator	 '); break;
+                case KeyCode.KEY_SUBTRACT	/*	109	*/: console.log('	Subtract	 '); break;
+                case KeyCode.KEY_DECIMAL	/*	110	*/: console.log('	Decimal	 '); break;
+                case KeyCode.KEY_DIVIDE	/*	111	*/: console.log('	Divide	 '); break;
+                case KeyCode.KEY_F1	/*	112	*/: console.log('	F1	 '); break;
+                case KeyCode.KEY_F2	/*	113	*/: console.log('	F2	 '); break;
+                case KeyCode.KEY_F3	/*	114	*/: console.log('	F3	 '); break;
+                case KeyCode.KEY_F4	/*	115	*/: console.log('	F4	 '); break;
+                case KeyCode.KEY_F5	/*	116	*/: console.log('	F5	 '); break;
+                case KeyCode.KEY_F6	/*	117	*/: console.log('	F6	 '); break;
+                case KeyCode.KEY_F7	/*	118	*/: console.log('	F7	 '); break;
+                case KeyCode.KEY_F8	/*	119	*/: console.log('	F8	 '); break;
+                case KeyCode.KEY_F9	/*	120	*/: console.log('	F9	 '); break;
+                case KeyCode.KEY_F10	/*	121	*/: console.log('	F10	 '); break;
+                case KeyCode.KEY_F11	/*	122	*/: console.log('	F11	 '); break;
+                case KeyCode.KEY_F12	/*	123	*/: console.log('	F12	 '); break;
+                case KeyCode.KEY_F13	/*	124	*/: console.log('	F13	 '); break;
+                case KeyCode.KEY_F14	/*	125	*/: console.log('	F14	 '); break;
+                case KeyCode.KEY_F15	/*	126	*/: console.log('	F15	 '); break;
+                case KeyCode.KEY_F16	/*	127	*/: console.log('	F16	 '); break;
+                case KeyCode.KEY_F17	/*	128	*/: console.log('	F17	 '); break;
+                case KeyCode.KEY_F18	/*	129	*/: console.log('	F18	 '); break;
+                case KeyCode.KEY_F19	/*	130	*/: console.log('	F19	 '); break;
+                case KeyCode.KEY_F20	/*	131	*/: console.log('	F20	 '); break;
+                case KeyCode.KEY_F21	/*	132	*/: console.log('	F21	 '); break;
+                case KeyCode.KEY_F22	/*	133	*/: console.log('	F22	 '); break;
+                case KeyCode.KEY_F23	/*	134	*/: console.log('	F23	 '); break;
+                case KeyCode.KEY_F24	/*	135	*/: console.log('	F24	 '); break;
+                case KeyCode.KEY_NUM_LOCK	/*	144	*/: console.log('	Num Lock	 '); break;
+                case KeyCode.KEY_SCROLL_LOCK	/*	145	*/: console.log('	Scroll Lock	 '); break;
+                case KeyCode.KEY_COMMA	/*	188	*/: console.log('	Comma	 '); break;
+                case KeyCode.KEY_PERIOD	/*	190	*/: console.log('	Period	 '); break;
+                case KeyCode.KEY_SLASH	/*	191	*/: console.log('	Slash	 '); break;
+                case KeyCode.KEY_BACK_QUOTE	/*	192	*/: console.log('	Back Quote	 '); break;
+                case KeyCode.KEY_OPEN_BRACKET	/*	219	*/: console.log('	Open Bracket	 '); break;
+                case KeyCode.KEY_BACK_SLASH	/*	220	*/: console.log('	Back Slash	 '); break;
+                case KeyCode.KEY_CLOSE_BRACKET	/*	221	*/: console.log('	Close Bracket	 '); break;
+                case KeyCode.KEY_QUOTE	/*	222	*/: console.log('	Quote	 '); break;
+                case KeyCode.KEY_META	/*	224	*/: console.log('	Meta	 '); break;
+                default:
+                // do nothing
+            }
+        }
+
+
+        //Do the time comparison (simulate 2.500.000 key events each)
+        var performanceTest = function (keyCodeHandler) {
+            var calls = 0;
+            var startTime = new Date().getTime();
+            for (var j = 0; j < 10000; j++) {
+                for (var i = 0; i < 250; i++) {
+                    keyCodeHandler({ keyCode: i })
+                    calls++;
+                }
+            }
+            return { calls: calls, time: new Date().getTime() - startTime };
+        }
+
+        var log = console.log;
+        console.log = function () { }; // make test silent
+
+        var comparison = {
+            onlyIf: performanceTest(onlyIfPractice),
+            elseIf: performanceTest(elseIfPractice),
+            switchCasePractice: performanceTest(switchCasePractice),
+            map: performanceTest(mapPractice)
+        }
+
+        log(comparison)
+        log(`Jeah! you now you can save ${comparison.onlyIf.time - comparison.map.time} milliseconds ^^ on the next mortal combat bot you write with js.`)
+
+
+    </script>
+</head>
+
+<body></body>
+
+</html>
